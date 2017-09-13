@@ -1,0 +1,10 @@
+{
+    "plugins": [
+
+		{
+			"repo": "barrier-prioritization-proto2",
+			"name": "barrier-prioritization-proto2",
+			"org": "FreshwaterNetwork"
+		}
+    ]
+}
