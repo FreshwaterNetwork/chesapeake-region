@@ -2,23 +2,22 @@
     "googleAnalyticsPropertyId": "28810260-22",
     "googleUrlShortenerApiKey": "AIzaSyCGRjZtPUN9LG1wG83JGUvEqHimxYjC510",
     "titleMain": { "text": "Freshwater Network", "url": "http://freshwaternetwork.org" },
-	"titleDetail": { "text": "Northeast Region", "url": "http://freshwaternetwork.org/waternews/northeast.html" },
+	"titleDetail": { "text": "Chesapeake Region", "url": "http://freshwaternetwork.org/waternews/chesapeake.html" },
     "headerLinks": [
 		{ "text": "GO TO", "url": "#", "items": [
-			{ "text": "Mississippi", "url": "http://maps.freshwaternetwork.org/mississippi/" },
-			{ "text": "Louisiana", "url": "http://freshwaternetwork.org/waternews/louisiana.html" },
-			{ "text": "Alabama Demo", "url": "http://maps.freshwaternetwork.org/alabama-demo/" }
+			{ "text": "Northeast", "url": "http://maps.freshwaternetwork.org/northeast/" },
+
 		  ]
 		},
-        { "text": "The Nature Conservancy", "url": "http://www.nature.org/ourinitiatives/regions/northamerica/unitedstates/maine/index.htm" },
+        { "text": "The Nature Conservancy", "url": "http://www.nature.org/" },
         { "text": "Partners", "url": "partners.html", "popup": true },
         { "text": "Legal Disclosure", "url": "http://www.nature.org/about-us/governance/terms-of-use/index.htm" }
     ],
     "initialExtent": [
-        -83.5,
-        36.0,
-        -66.5,
-        47.75
+        -80,
+        36.5,
+        -74,
+        42.5
     ],
  "regionLinks": [
             { "text": "California", "url": "http://maps.coastalresilience.org/california" },
@@ -69,13 +68,13 @@
 	
     "launchpad": {
             "title": "",
-            "description":"<p>Welcome to the Freshwater Northeast Region, which houses the Northeast Aquatic Connectivity project tool for exploring in-stream barriers to aquatic connectivity and identifying opportunities for connectivity restoration projects.  This tool was developed as part of the <a href='https://streamcontinuity.org/'>North Atlantic Aquatic Connectviity Collaborative</a> and is part of a family of spatial decision support tools supported through the <a href='http://coastalresilience.org/natural-solutions/toolkit/'>Natural Solutions Toolkit</a>. </p>",
+            "description":"<p>Welcome to the Freshwater Network Chesapeake Region, which houses the Chesapeake Fish Passage Prioritization project tool for exploring in-stream barriers to aquatic connectivity and identifying opportunities for connectivity restoration projects.  This tool is part of a family of spatial decision support tools supported through the <a href='http://coastalresilience.org/natural-solutions/toolkit/'>Natural Solutions Toolkit</a>. </p>",
             "plugins": [
 
 				{
 					"title": "<img src='img/barrier_prioritization.png' hspace=10>Aquatic Barrier Prioritization",
 				
-					"description": "The Northeast Aquatic Connectivity project's tool to assess barriers to aquatic connectvity including dams and road-stream crossings.  ",
+					"description": "The Chesapeake Fish Passage Prioritization project's tool to assess and prioritize dams for their impacts on aquatic connectivity.",
 					"pluginName": "barrier-prioritization-proto2"
 				}
             ]
