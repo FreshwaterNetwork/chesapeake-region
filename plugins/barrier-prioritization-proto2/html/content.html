@@ -27,27 +27,39 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 			</div>
 		</div> -->
 		<div class="bp_flexColHCenter">
-			<div><h4  style="display:inline;" id="stateStatsExpander" class="bp_expander">Barrier Summary by State <span class="bp_expand">+</span></h4><img src="plugins/barrier-prioritization-proto2/images/info.png"  title="Learn about the barrier summaries by state" class="infoIcon" id="-stateStatsInfo"></div>
-			<div id="stateStatsContainer" class="bp_flexColHCenter zoomState">
-				<p id="zoomStateHeader"><br/>Zoom to a state to view the prioritized dams.</p>
-				<div class="bp_flexColHCenter">
-					<div class="chosen-wrap" style="margin-bottom:10px;">
-						<select data-placeholder="Chesapeake Bay Watershed" id="zoomState" class="chosen">
-							<option value="Region">Chesapeake Bay Watershed</option>
-							<option value="PA">Pennsylvania</option>
-							<option value="MD">Maryland</option>
-							<option value="VA">Virginia</option>
-						</select>
-					</div>
-				</div>
-				<div class="bp_flexColHCenter">
-			
-					<div id="barChartDams"><label for="barChartDams"># Dams</label></div>
-			
-					<div id="barChartAvgNetwork"><label  for="barChartAvgNetwork">Avg Upstream Network (miles)</label></div>
-					
-				</div>
-			</div>
+                    <p id="zoomStateHeader"><br/>Select a region and a consensus scenario to view the prioritized dams <b>stratified</b> by that state for that scenario.</p>
+                    <div class="bp_flexRowHCenter">
+                        <div class="bp_flexColHCenter">
+                                <div class="chosen-wrap" style="margin-bottom:10px; margin-right:10px;">
+                                        <select data-placeholder="Chesapeake Bay Watershed" id="zoomState" class="chosen">
+                                                <option value="Region">Bay wide</option>
+                                                <option value="PA">Pennsylvania</option>
+                                                <option value="MD">Maryland</option>
+                                                <option value="VA">Virginia</option>
+                                        </select>
+                                </div>
+                        </div>
+                        <div class="bp_flexColHCenter">
+                                <div class="chosen-wrap" style="margin-bottom:10px;">
+                                        <select data-placeholder="Select a consensus scenario" id="scenario" class="chosen">
+                                                <option value="diad">Diadromous</option>
+                                                <option value="res">Resident</option>
+                                                <option value="bkt">Brook Trout</option>
+                                        </select>
+                                </div>
+                        </div>
+                    </div>
+                    <div><h4  style="display:inline;" id="stateStatsExpander" class="bp_expander">Barrier Summary by State <span class="bp_expand">+</span></h4><img src="plugins/barrier-prioritization-proto2/images/info.png"  title="Learn about the barrier summaries by state" class="infoIcon" id="-stateStatsInfo"></div>
+                    <div id="stateStatsContainer" class="bp_flexColHCenter zoomState">
+
+                            <div class="bp_flexColHCenter">
+
+                                    <div id="barChartDams"><label for="barChartDams"># Dams</label></div>
+
+                                    <div id="barChartAvgNetwork"><label  for="barChartAvgNetwork">Avg Upstream Network (miles)</label></div>
+
+                            </div>
+                    </div>
 		</div>
 		<div class="bp_flexColHCenter">
 			<div id="clickInstructions" class="bp_strong"><br/><br/>Click on a barrier to visualize its data and expose additional functionality<br/><br/></div>
@@ -173,6 +185,7 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 				<button class="button button-primary" id="dlConsensus" title="Download the anadromous prioritization result spatial data as a file geodatabase">Download Anadromous Prioritization: GIS</button>
 				<button class="button button-primary" id="dlConsensusExcel" title="Download the anadromous prioritization result spatial data as an Excel spreadsheet">Download Anadromous Prioritization Excel</button>
 			</div>
+			<div id="latLongText" class="bp_grayText"></div>
 		</div>
 	
 	</section>
