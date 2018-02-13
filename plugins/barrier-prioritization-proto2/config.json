@@ -28,6 +28,7 @@
     },
     "additionalLayers":{	
             "Crossings" :["xings", "http://cirrus-web-adapter-241060755.us-west-1.elb.amazonaws.com/arcgis/rest/services/FN_Chesapeake/ChesFPP/MapServer/", "3", "View the NAACC Road-Stream Crossings", "off"],
+            "Surveyed Crossing Barriers" :["surveyedXings", "http://cirrus-web-adapter-241060755.us-west-1.elb.amazonaws.com/arcgis/rest/services/FN_Chesapeake/ChesFPP/MapServer/", "34", "View surveyed severe and significant road-stream crossing barriers", "off"],
             "Removed Dams" : ["remDams", "http://cirrus-web-adapter-241060755.us-west-1.elb.amazonaws.com/arcgis/rest/services/FN_Chesapeake/ChesFPP/MapServer/", "4", "View previsouly removed dams.", "off"],
             "Waterfalls" :["falls", "http://cirrus-web-adapter-241060755.us-west-1.elb.amazonaws.com/arcgis/rest/services/FN_Chesapeake/ChesFPP/MapServer/", "5", "View waterfall and other natural barriers to fish passage", "off"],
             "River Network" :["rivers", "http://cirrus-web-adapter-241060755.us-west-1.elb.amazonaws.com/arcgis/rest/services/FN_Chesapeake/ChesFPP/MapServer/", "6", "Zoom into the scale of a city to see the river network", "off"],
@@ -212,7 +213,11 @@
         "QMD_BIBI" : "Maryland MBSS Benthic IBI stream health score",
         "QMD_FIBI" : "Maryland MBSS Fish IBI stream health score",
         "QVA_MIBI" : "Virginia INSTAR IBI stream health score",
-        "QPA_IBI" : "Pennsylvania IBI stream health score"
+        "QPA_IBI" : "Pennsylvania IBI stream health score",
+        "gRareSpHUC12" :"Presence of globally rare (G1, G2, G3) or federally endangered / threatened fish or mussel species in HUC12",
+        "rareSpHUC12" : "Presence of rare fish or mussel species in HUC12",
+        "gRareSpFuncNet" :"Presence of globally rare (G1, G2, G3) or federally endangered / threatened fish or mussel species in upstream or downstream functional network",
+        "rareSpFuncNet" : "Presence of rare fish or mussel species in upstream or downstream functional network"
     },
     "metricShortNames":{
         "batFuncUS" : "US Functional Network",
@@ -275,7 +280,11 @@
         "QMD_BIBI" : "MD MBSS BIBI",
         "QMD_FIBI" : "MD MBSS FIBI",
         "QVA_MIBI" : "VA INSTAR IBI",
-        "QPA_IBI" : "PA IBI"
+        "QPA_IBI" : "PA IBI",
+        "gRareSpHUC12" :"Globally rare fish or mussel in HUC12",
+        "rareSpHUC12" : "Rare fish or mussel species in HUC12",
+        "gRareSpFuncNet" :"Globally rare fish or mussel species in US or DS Net",
+        "rareSpFuncNet" : "Rare fish or mussel species in US or DS Net"
     },
     "metricUnits":{
         "batFuncUS" : "m",
@@ -338,7 +347,11 @@
         "QMD_BIBI" : " (index)",
         "QMD_FIBI" : " (index)",
         "QVA_MIBI" : " (index)",
-        "QPA_IBI" : " (index)"
+        "QPA_IBI" : " (index)",
+        "gRareSpHUC12" :"yes/no",
+        "rareSpHUC12" : "yes/no",
+        "gRareSpFuncNet" :"yes/no",
+        "rareSpFuncNet" : "yes/no"
     },
     "idBlacklist" : ["OBJECTID_1", "Shape", "OBJECTID", "Use_Dams", "Use_Dams_ExclPassage", "Use_Severe", "Use_Severe_ExclPassage", "Use_Significant", "Use_Moderate", "Use_Minor", "Use_Insignificant"],
     "idWhiteList" : ["SurveyDate"],
@@ -403,7 +416,11 @@
         "QMD_BIBI" : "A",
         "QMD_FIBI" : "A",
         "QVA_MIBI" : "A",
-        "QPA_IBI" : "A"
+        "QPA_IBI" : "A",
+        "gRareSpHUC12" :"D",
+        "rareSpHUC12" : "D",
+        "gRareSpFuncNet" :"D",
+        "rareSpFuncNet" : "D"
     },
 
     "diadromous":{
@@ -467,7 +484,11 @@
         "QMD_BIBI" : 0,
         "QMD_FIBI" : 0,
         "QVA_MIBI" : 0,
-        "QPA_IBI" : 0
+        "QPA_IBI" : 0,
+        "gRareSpHUC12" :0,
+        "rareSpHUC12" : 0,
+        "gRareSpFuncNet" :0,
+        "rareSpFuncNet" : 0
     },
 
     "resident":{
@@ -530,7 +551,11 @@
         "QMD_BIBI" : 0,
         "QMD_FIBI" : 0,
         "QVA_MIBI" : 0,
-        "QPA_IBI" : 0
+        "QPA_IBI" : 0,
+        "gRareSpHUC12" :0,
+        "rareSpHUC12" : 0,
+        "gRareSpFuncNet" :0,
+        "rareSpFuncNet" : 0
     },
     "brookTrout":{
         "batFuncUS" : 0,
@@ -592,7 +617,11 @@
         "QMD_BIBI" : 0,
         "QMD_FIBI" : 0,
         "QVA_MIBI" : 0,
-        "QPA_IBI" : 0
+        "QPA_IBI" : 0,
+        "gRareSpHUC12" :0,
+        "rareSpHUC12" : 0,
+        "gRareSpFuncNet" :0,
+        "rareSpFuncNet" : 0
     },
 
     "maxValues":{
@@ -656,7 +685,11 @@
         "QMD_BIBI" : 4,
         "QMD_FIBI" : 4,
         "QVA_MIBI" : 4,
-        "QPA_IBI" : 3
+        "QPA_IBI" : 3,
+        "gRareSpHUC12" :1,
+        "rareSpHUC12" : 1,
+        "gRareSpFuncNet" :1,
+        "rareSpFuncNet" : 1
     },
 	
 }
