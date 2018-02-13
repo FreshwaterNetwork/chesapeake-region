@@ -27,27 +27,39 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 			</div>
 		</div> -->
 		<div class="bp_flexColHCenter">
-			<div><h4  style="display:inline;" id="stateStatsExpander" class="bp_expander">Barrier Summary by State <span class="bp_expand">+</span></h4><img src="plugins/barrier-prioritization-proto2/images/info.png"  title="Learn about the barrier summaries by state" class="infoIcon" id="-stateStatsInfo"></div>
-			<div id="stateStatsContainer" class="bp_flexColHCenter zoomState">
-				<p id="zoomStateHeader"><br/>Zoom to a state to view its barriers for the selected severity. This number is cumulative (e.g. selecting "moderate" barriers includes "significant" and "severe".)</p>
-				<div class="bp_flexColHCenter">
-					<div class="chosen-wrap" style="margin-bottom:10px;">
-						<select data-placeholder="Chesapeake Bay Watershed" id="zoomState" class="chosen">
-							<option value="Region">Chesapeake Bay Watershed</option>
-							<option value="PA">Pennsylvania</option>
-							<option value="MD">Maryland</option>
-							<option value="VA">Virginia</option>
-						</select>
-					</div>
-				</div>
-				<div class="bp_flexColHCenter">
-			
-					<div id="barChartDams"><label for="barChartDams"># Dams</label></div>
-			
-					<div id="barChartAvgNetwork"><label  for="barChartAvgNetwork">Avg Upstream Network (miles)</label></div>
-					
-				</div>
-			</div>
+                    <p id="zoomStateHeader"><br/>Select a region and a consensus scenario to view the prioritized dams <b>stratified</b> by that state for that scenario.</p>
+                    <div class="bp_flexRowHCenter">
+                        <div class="bp_flexColHCenter">
+                                <div class="chosen-wrap" style="margin-bottom:10px; margin-right:10px;">
+                                        <select data-placeholder="Chesapeake Bay Watershed" id="zoomState" class="chosen">
+                                                <option value="Region">Bay wide</option>
+                                                <option value="PA">Pennsylvania</option>
+                                                <option value="MD">Maryland</option>
+                                                <option value="VA">Virginia</option>
+                                        </select>
+                                </div>
+                        </div>
+                        <div class="bp_flexColHCenter">
+                                <div class="chosen-wrap" style="margin-bottom:10px;">
+                                        <select data-placeholder="Select a consensus scenario" id="scenario" class="chosen">
+                                                <option value="diad">Diadromous</option>
+                                                <option value="res">Resident</option>
+                                                <option value="bkt">Brook Trout</option>
+                                        </select>
+                                </div>
+                        </div>
+                    </div>
+                    <div><h4  style="display:inline;" id="stateStatsExpander" class="bp_expander">Barrier Summary by State <span class="bp_expand">+</span></h4><img src="plugins/barrier-prioritization-proto2/images/info.png"  title="Learn about the barrier summaries by state" class="infoIcon" id="-stateStatsInfo"></div>
+                    <div id="stateStatsContainer" class="bp_flexColHCenter zoomState">
+
+                            <div class="bp_flexColHCenter">
+
+                                    <div id="barChartDams"><label for="barChartDams"># Dams</label></div>
+
+                                    <div id="barChartAvgNetwork"><label  for="barChartAvgNetwork">Avg Upstream Network (miles)</label></div>
+
+                            </div>
+                    </div>
 		</div>
 		<div class="bp_flexColHCenter">
 			<div id="clickInstructions" class="bp_strong"><br/><br/>Click on a barrier to visualize its data and expose additional functionality<br/><br/></div>
@@ -124,11 +136,11 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 						            <option value="NOT IN">NOT IN</option>
 						            <option value="LIKE">LIKE</option>
 					        </select>
-					        <select id="filterConsensusResultsValue" class="chosen"  multiple="true" style="width:100px" data-placeholder="Filter value..." title="Select a value to filter by. Must use the "IN" operator if selecting multiple values">
+					        <select id="filterConsensusResultsValue" class="chosen"  multiple="true" style="width:100px" data-placeholder="Filter value..." title='Select a value to filter by. Must use the "IN" operator if selecting multiple values'>
 					            <option value=""></option>
 					        </select>
 					        <div class="bp_flexRowHCenter">
-						    	<input  id="resultsConsensusFilter" class="bp_textInput" type="text" placeholder="e.g. "AvgTier" = 1" value=""  title="Enter an ArcGIS-compliant definition query to filter the results of the analysis."/>​
+						    	<input  id="resultsConsensusFilter" class="bp_textInput" type="text" placeholder='e.g. "Tier" = 1"' value=""  title="Enter an ArcGIS-compliant definition query to filter the results of the analysis."/>​
 							</div>
 							<div class="bp_flexRowHCenter bp_flexNoWrap">
 								<button class="button button-primary bp_button" type="button" id="applyResultConsensusFilterButton"  title="Click to filter the results of the analysis">Apply Filter</button>
@@ -151,9 +163,9 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 					</div>
 						<div class="layer" id="toggleBarriers">
 							<label class="form-component">
-								<input type="checkbox" data-layer="barriers" id="barriers">
+								<input type="checkbox" data-layer="barriers" id="barriers" checked/>
 								<div class="check"></div>
-								<span class="form-text">Anadromous Prioritization</span> 
+								<span class="form-text">Prioritized Dams</span> 
 							</label>
 							<span class="fa fa-info-circle info" title="Prioritized dams and road stream crossings"></span>
 							<div class="bp_transparency-control" data-layer="barriers" id="barrierstransp" data-opacity="100">
@@ -173,6 +185,7 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 				<button class="button button-primary" id="dlConsensus" title="Download the anadromous prioritization result spatial data as a file geodatabase">Download Anadromous Prioritization: GIS</button>
 				<button class="button button-primary" id="dlConsensusExcel" title="Download the anadromous prioritization result spatial data as an Excel spreadsheet">Download Anadromous Prioritization Excel</button>
 			</div>
+			<div id="latLongText" class="bp_grayText"></div>
 		</div>
 	
 	</section>
@@ -207,11 +220,11 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 						            <option value="NOT IN">NOT IN</option>
 						            <option value="LIKE">LIKE</option>
 					        </select>
-					        <select id="filterBuildValue" class="chosen"  multiple="true" style="width:100px" data-placeholder="Filter value..." title="Select a value to filter by. Must use the "IN" operator if selecting multiple values" >
+					        <select id="filterBuildValue" class="chosen"  multiple="true" style="width:100px" data-placeholder="Filter value..." title='Select a value to filter by. Must use the "IN" operator if selecting multiple values' >
 					            <option value=""></option>
 					        </select>
 					        <div class="bp_flexColHCenter">
-						    	<input  id="userFilter" type="text" style="width:296px" placeholder="e.g. "AvgTier" = 1" value=""  title="Enter an ArcGIS-compliant definition query to filter the results of the analysis."/>
+						    	<input  id="userFilter" type="text" style="width:296px" placeholder="e.g. "Tier" = 1" value=""  title="Enter an ArcGIS-compliant definition query to filter the results of the analysis."/>
 							</div>
 						</div>
 					</div>
@@ -299,7 +312,10 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 									<div><p class="bp_metricLabel">​<input id="weightIn-QMD_FIBI" size="2" maxlength="3" class="bp_weightInput" type="text" title="Enter a value between 0-100 to indicate the relative importance of this metric for your objectives.  The sum of all weights must = 100"  value="0"/><a href="plugins/barrier-prioritization-proto2/images/Metric_Glossary.pdf#page=4" title="Click the metric name for a description of this metric" target="_blank"><label class="bp_metricLabelText">Maryland MBSS Fish IBI stream health score</label></a></p></div>
 									<div><p class="bp_metricLabel">​<input id="weightIn-QVA_MIBI" size="2" maxlength="3" class="bp_weightInput" type="text" title="Enter a value between 0-100 to indicate the relative importance of this metric for your objectives.  The sum of all weights must = 100"  value="0"/><a href="plugins/barrier-prioritization-proto2/images/Metric_Glossary.pdf#page=4" title="Click the metric name for a description of this metric" target="_blank"><label class="bp_metricLabelText">Virginia INSTAR IBI stream health score</label></a></p></div>
 									<div><p class="bp_metricLabel">​<input id="weightIn-QPA_IBI" size="2" maxlength="3" class="bp_weightInput" type="text" title="Enter a value between 0-100 to indicate the relative importance of this metric for your objectives.  The sum of all weights must = 100"  value="0"/><a href="plugins/barrier-prioritization-proto2/images/Metric_Glossary.pdf#page=4" title="Click the metric name for a description of this metric" target="_blank"><label class="bp_metricLabelText">Pennsylvania IBI stream health score</label></a></p></div>
-
+                                                                        <div><p class="bp_metricLabel">​<input id="weightIn-rareSpFuncNet" size="2" maxlength="3" class="bp_weightInput" type="text" title="Enter a value between 0-100 to indicate the relative importance of this metric for your objectives.  The sum of all weights must = 100"  value="0"/><a href="plugins/barrier-prioritization-proto2/images/Metric_Glossary.pdf#page=4" title="Click the metric name for a description of this metric" target="_blank"><label class="bp_metricLabelText">Presence of rare fish or mussel species in upstream or downstream functional network</label></a></p></div>
+                                                                        <div><p class="bp_metricLabel">​<input id="weightIn-gRareSpFuncNet" size="2" maxlength="3" class="bp_weightInput" type="text" title="Enter a value between 0-100 to indicate the relative importance of this metric for your objectives.  The sum of all weights must = 100"  value="0"/><a href="plugins/barrier-prioritization-proto2/images/Metric_Glossary.pdf#page=4" title="Click the metric name for a description of this metric" target="_blank"><label class="bp_metricLabelText">Presence of globally rare (G1, G2, G3) or federally endangered / threatened fish or mussel species in upstream or downstream functional network</label></a></p></div>
+                                                                        <div><p class="bp_metricLabel">​<input id="weightIn-rareSpHUC12" size="2" maxlength="3" class="bp_weightInput" type="text" title="Enter a value between 0-100 to indicate the relative importance of this metric for your objectives.  The sum of all weights must = 100"  value="0"/><a href="plugins/barrier-prioritization-proto2/images/Metric_Glossary.pdf#page=4" title="Click the metric name for a description of this metric" target="_blank"><label class="bp_metricLabelText">Presence of rare fish or mussel species in HUC12</label></a></p></div>
+                                                                        <div><p class="bp_metricLabel">​<input id="weightIn-gRareSpHUC12" size="2" maxlength="3" class="bp_weightInput" type="text" title="Enter a value between 0-100 to indicate the relative importance of this metric for your objectives.  The sum of all weights must = 100"  value="0"/><a href="plugins/barrier-prioritization-proto2/images/Metric_Glossary.pdf#page=4" title="Click the metric name for a description of this metric" target="_blank"><label class="bp_metricLabelText">Presence of globally rare (G1, G2, G3) or federally endangered / threatened fish or mussel species in HUC12</label></a></p></div>
 								</div>
 								<div id="weightIn-Tab4Div" class="tab">
 									<div><p class="bp_metricLabel">​<input id="weightIn-NESZCL_Int" size="2" maxlength="3" class="bp_weightInput" type="text" title="Enter a value between 0-100 to indicate the relative importance of this metric for your objectives.  The sum of all weights must = 100"  value="0"/><a href="plugins/barrier-prioritization-proto2/images/Metric_Glossary.pdf#page=4" title="Click the metric name for a description of this metric" target="_blank"><label class="bp_metricLabelText">Stream size class (raise headwaters in importance)</label></a></p></div>
@@ -366,7 +382,7 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 				        <div style="padding-bottom: 2px; padding-top: 2px">
 				            <select id="summaryStatField" class="chosen" style="width:250px" data-placeholder="2. Value to Summarize..." title="Enter the value to summarize.">
 				                <option value=""></option>
-				                <option value="AvgTier">Result: Tier</option>
+				                <option value="Tier">Result: Tier</option>
 				                <option value="FinalRank">Result: Final Rank</option>
 				            </select>
 						</div> 
