@@ -5,7 +5,7 @@
 	"titleDetail": { "text": "Chesapeake Region", "url": "http://freshwaternetwork.org/waternews/chesapeake.html" },
     "headerLinks": [
 		{ "text": "GO TO", "url": "#", "items": [
-			{ "text": "Northeast", "url": "http://maps.freshwaternetwork.org/northeast/" },
+			{ "text": "Northeast", "url": "http://maps.freshwaternetwork.org/northeast/" }
 
 		  ]
 		},
