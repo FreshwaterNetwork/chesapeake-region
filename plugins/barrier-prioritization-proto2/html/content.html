@@ -27,7 +27,7 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
 			</div>
 		</div> -->
 		<div class="bp_flexColHCenter">
-                    <p id="zoomStateHeader"><br/>Select a region and a consensus scenario to view the prioritized dams <b>stratified</b> by that state for that scenario.</p>
+                    <p id="zoomStateHeader">Select a region and a consensus scenario to view the prioritized dams <b>stratified</b> by that state for that scenario.</p>
                     <div class="bp_flexRowHCenter">
                         <div class="bp_flexColHCenter">
                                 <div class="chosen-wrap" style="margin-bottom:10px; margin-right:10px;">
@@ -430,10 +430,39 @@ The unique ContentPane id makes all the element ids unique and prevents duplicat
             <section>
 
                 <div>Click a point on a river to generate the upstream network for that point.</div>
+                <br>
                 <div id="info" class="bp_flexColHCenter" title="Click a point on a river to generate the upstream network for that point.">
                     <button class="button button-primary" id="clickPointNetwork">Calculate An Upstream Network</button>
-                    <button class="button button-primary" id="clickPointFinish">Finish</button>
+                    <button class="button button-primary" id="clearUsNetResults">Clear Results</button>
                 </div>
+                <div>
+                    <span id="usNetworkStatusReport"></span>
+                </div>
+            </section>
+	</div>
+        <h3 id="milesOpened" class="milesOpenedAccord">Track Miles Opened Over Time</h3>
+	<div>
+            <section>
+                <br>
+                <div class="bp_flexColHCenter">Use the time slider to see how upstream river miles have been opened since 1988.</div>
+                <br>
+                <div id="info" class="bp_flexColHCenter" title="Use the slider to see miles open over time.">
+                    <br>
+                    <div id="timeInfo" class="bp_flexColHCenter">
+                        <div class="slider-container bp_flexColHCenter" style="width:275px;">
+                            <div id="timeSlider" class="slider" style="width:275px;"></div>
+                            <div style="text-align:center; margin-top:10px;">
+                                Between <span class="blueFont" id="timeSliderMin">1988</span> and <span class="blueFont" id="timeSliderMax">2019</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mileageResult">
+                        <span id="damRemovalResultVal"></span>
+                        <br>
+                        <span id="otherPassageResultVal"></span>
+                    </div>
+                </div>
+
             </section>
 	</div>
 </div>
