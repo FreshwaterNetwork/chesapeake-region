@@ -91,7 +91,7 @@
             1:"Insignificant",
             0:"Average"
     },
-    "xingSurveyURL" :"https://www.streamcontinuity.org/cdb2/naacc_display_crossing.cfm?naaccCrossId=",
+    "xingSurveyURL" :"https://naacc.org/naacc_display_crossing.cfm?aqId=",
     "metricMetersToMiles":["batFuncUS", "batTotUSDS", "batLenUS", "batAbs"],
     "includePassabilityOption" : false,
     "resultTier" : "Tier",
