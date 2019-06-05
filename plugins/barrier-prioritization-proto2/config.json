@@ -10,7 +10,7 @@
     "includeFactSheets" : true,
     "includeClickUSNetwork": true,
     "includeMilesOverTime" : true,
-    "factSheetRoot" : "https://maps.tnc.org/EROF_ChesapeakeFPP/FactSheets/",
+    "factSheetRoot" : "http://maps.tnc.org/EROF_ChesapeakeFPP/FactSheets/",
     "includeStratifiedRegions" : true,
     "includeMultipleScenarios" : true,
     "residentTierName" : "TierResident",
