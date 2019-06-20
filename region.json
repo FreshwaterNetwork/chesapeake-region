@@ -26,7 +26,7 @@
         { "text": "Wisconsin", "url": "http://maps.freshwaternetwork.org/wisconsin/" },
         { "text": "Florida", "url": "http://maps.freshwaternetwork.org/florida/" }
     ],
-    ],
+
     "basemaps": [
         { "name": "Topographic"        , "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer" },
         { "name": "Imagery"            , "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer" },
