@@ -20,17 +20,12 @@
         42.5
     ],
  "regionLinks": [
-            { "text": "California", "url": "https://maps.coastalresilience.org/california" },
-            { "text": "Connecticut", "url": "https://maps.coastalresilience.org/connecticut" },
-            { "text": "Global", "url": "https://maps.coastalresilience.org/global/" },
-            { "text": "Gulf of Mexico", "url": "https://maps.coastalresilience.org/gulfmex/" },
-            { "text": "Grenada, St. Vincent & the Grenadines", "url": "https://maps.coastalresilience.org/gsvg/" },
-            { "text": "MesoAmerican Reef", "url": "https://maps.coastalresilience.org/mar/" },
-            { "text": "New Jersey", "url": "https://maps.coastalresilience.org/newjersey" },
-            { "text": "Southeast Florida", "url": "https://maps.coastalresilience.org/seflorida/" },
-            { "text": "United States", "url": "https://maps.coastalresilience.org/unitedstates/" },
-            { "text": "U.S. Virgin Islands", "url": "https://maps.coastalresilience.org/usvi/" },
-            { "text": "Washington", "url": "https://maps.coastalresilience.org/pugetsound" }
+        { "text": "Northeast Region", "url": "http://maps.freshwaternetwork.org/northeast/" },
+		{ "text": "Louisiana", "url": "http://maps.freshwaternetwork.org/louisiana/" },
+        { "text": "Mississippi", "url": "http://maps.freshwaternetwork.org/mississippi/" },
+        { "text": "Wisconsin", "url": "http://maps.freshwaternetwork.org/wisconsin/" },
+        { "text": "Florida", "url": "http://maps.freshwaternetwork.org/florida/" }
+    ],
     ],
     "basemaps": [
         { "name": "Topographic"        , "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer" },
